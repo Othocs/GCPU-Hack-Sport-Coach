@@ -1,3 +1,4 @@
+# Standard library imports
 import cv2
 import mediapipe as mp
 from mediapipe.tasks import python
@@ -5,7 +6,14 @@ from mediapipe.tasks.python import vision
 from mediapipe import solutions
 from mediapipe.framework.formats import landmark_pb2
 import numpy as np
+import os
+from dotenv import load_dotenv
 
+load_dotenv()
+
+# Module imports
+from gemini_call import call_gemini
+from gemini_prompt import GEMINI_PROMPT
 
 def detect_skeleton(frame):
     # Create an PoseLandmarker object.
@@ -39,14 +47,18 @@ def get_webcam():
     # Define the codec and create VideoWriter object
     fourcc = cv2.VideoWriter_fourcc(*'mp4v')
     out = cv2.VideoWriter('output.mp4', fourcc, 20.0, (frame_width, frame_height))
-
+    index = 0
     while True:
         ret, frame = cam.read()
-
+        index += 1
         # Write the frame to the output file
         out.write(frame)
         detection_result = detect_skeleton(frame)
         annotated_image = draw_landmarks_on_image(frame, detection_result)
+        
+        if index % 30 == 0:
+            feedback = call_gemini(annotated_image, GEMINI_PROMPT)
+            print(feedback)
 
 
         cv2.imshow('Camera', annotated_image)
