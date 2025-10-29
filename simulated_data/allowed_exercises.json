@@ -1,0 +1,425 @@
+{
+    "exercises": [
+        {
+            "id": "1001",
+            "name": "Push-up",
+            "description": "A push-up is a compound bodyweight exercise that primarily targets the chest, shoulders, and triceps while engaging the core and lower body for stabilization.",
+            "primary_muscles": [
+                "chest"
+            ],
+            "secondary_muscles": [
+                "shoulders",
+                "triceps",
+                "core"
+            ],
+            "equipment": "bodyweight",
+            "difficulty": "beginner",
+            "category": "strength",
+            "mechanics": "compound",
+            "instructions": "Start in a high plank position with your hands slightly wider than shoulder-width apart. Keep your body in a straight line from head to heels. Lower your chest until it nearly touches the floor, keeping elbows at about 45° from your torso. Press through your palms to return to the starting position.",
+            "range_of_motion": {
+                "start": "arms fully extended, body straight",
+                "end": "chest 2–5 cm from ground, elbows bent ~90°"
+            },
+            "good_posture": [
+                "shoulders back and down",
+                "chest open and aligned with spine",
+                "head in line with the spine (neutral neck)",
+                "hips, knees, and ankles aligned",
+                "core engaged (no sagging or arching)",
+                "hands slightly wider than shoulders",
+                "elbows at ~45° angle from torso"
+            ],
+            "bad_posture": [
+                "shoulders rolled forward",
+                "head drooping or looking forward",
+                "hips sagging or raised too high",
+                "flared elbows (>70°)",
+                "hands too far forward or backward"
+            ],
+            "common_mistakes": [
+                "Letting the lower back sag (loss of core tension)",
+                "Flaring elbows out to the sides excessively",
+                "Not reaching full depth or locking out at the top",
+                "Neck craning upward or downward"
+            ],
+            "safety_tips": [
+                "Keep a neutral spine throughout the movement",
+                "Warm up shoulders and wrists before performing",
+                "Use knee push-ups or incline push-ups if full push-up causes strain"
+            ],
+            "video_demo_url": "https://example.com/pushup-demo"
+        },
+        {
+            "id": "1002",
+            "name": "Squat",
+            "description": "A fundamental lower-body exercise targeting the quadriceps, glutes, and hamstrings while engaging the core for stability.",
+            "primary_muscles": [
+                "quadriceps",
+                "glutes"
+            ],
+            "secondary_muscles": [
+                "hamstrings",
+                "core",
+                "calves"
+            ],
+            "equipment": "bodyweight",
+            "difficulty": "beginner",
+            "category": "strength",
+            "mechanics": "compound",
+            "instructions": "Stand with feet shoulder-width apart, toes slightly out. Push hips back and bend knees to lower until thighs are parallel to the ground. Keep chest up and knees tracking over toes. Return to standing by pressing through the heels.",
+            "range_of_motion": {
+                "start": "standing upright with knees extended",
+                "end": "thighs parallel or below parallel to the ground"
+            },
+            "good_posture": [
+                "chest upright",
+                "knees aligned with toes",
+                "weight on heels and midfoot",
+                "neutral spine maintained",
+                "hips descend straight down"
+            ],
+            "bad_posture": [
+                "knees caving inward",
+                "heels lifting off floor",
+                "back rounding",
+                "neck hyperextended"
+            ],
+            "common_mistakes": [
+                "Bending forward too much",
+                "Not reaching proper depth",
+                "Allowing knees to collapse inward"
+            ],
+            "safety_tips": [
+                "Warm up hips and knees",
+                "Keep core tight to protect the lower back"
+            ],
+            "video_demo_url": "https://example.com/squat-demo"
+        },
+        {
+            "id": "1003",
+            "name": "Pull-up",
+            "description": "A bodyweight pulling exercise targeting the latissimus dorsi and upper back.",
+            "primary_muscles": [
+                "latissimus dorsi"
+            ],
+            "secondary_muscles": [
+                "biceps",
+                "shoulders",
+                "core"
+            ],
+            "equipment": "pull-up bar",
+            "difficulty": "intermediate",
+            "category": "strength",
+            "mechanics": "compound",
+            "instructions": "Grip the bar with palms facing away, slightly wider than shoulders. Pull your chest toward the bar, leading with elbows. Lower under control until arms are fully extended.",
+            "range_of_motion": {
+                "start": "arms fully extended, body hanging",
+                "end": "chin above bar"
+            },
+            "good_posture": [
+                "shoulders down and back",
+                "chest lifted",
+                "core engaged",
+                "legs still and aligned"
+            ],
+            "bad_posture": [
+                "shrugging shoulders up",
+                "kipping or swinging legs",
+                "chin jutting forward"
+            ],
+            "common_mistakes": [
+                "Partial reps",
+                "Momentum-based pulls",
+                "Neck strain from reaching"
+            ],
+            "safety_tips": [
+                "Avoid jerking at the bottom",
+                "Warm up shoulders before heavy pulling"
+            ],
+            "video_demo_url": "https://example.com/pullup-demo"
+        },
+        {
+            "id": "1004",
+            "name": "Plank",
+            "description": "An isometric core exercise improving stability and endurance.",
+            "primary_muscles": [
+                "core"
+            ],
+            "secondary_muscles": [
+                "shoulders",
+                "glutes",
+                "back"
+            ],
+            "equipment": "bodyweight",
+            "difficulty": "beginner",
+            "category": "stability",
+            "mechanics": "isometric",
+            "instructions": "Start on forearms and toes, keeping body in a straight line. Engage core, glutes, and quads. Avoid letting hips sag or rise.",
+            "range_of_motion": {
+                "start": "body in straight line, core engaged",
+                "end": "hold for desired duration without losing form"
+            },
+            "good_posture": [
+                "neutral spine",
+                "hips level",
+                "shoulders above elbows"
+            ],
+            "bad_posture": [
+                "hips sagging",
+                "shoulders shrugging",
+                "neck tilted"
+            ],
+            "common_mistakes": [
+                "Holding too long with poor form",
+                "Overarching back"
+            ],
+            "safety_tips": [
+                "Engage glutes and abs equally",
+                "Stop if lower back pain appears"
+            ],
+            "video_demo_url": "https://example.com/plank-demo"
+        },
+        {
+            "id": "1005",
+            "name": "Deadlift",
+            "description": "A compound lift targeting the posterior chain including glutes, hamstrings, and back.",
+            "primary_muscles": [
+                "glutes",
+                "hamstrings"
+            ],
+            "secondary_muscles": [
+                "back",
+                "core",
+                "forearms"
+            ],
+            "equipment": "barbell",
+            "difficulty": "intermediate",
+            "category": "strength",
+            "mechanics": "compound",
+            "instructions": "Stand with midfoot under the bar, grip just outside knees. Keep chest up, back flat, and pull bar by driving through heels until fully upright.",
+            "range_of_motion": {
+                "start": "bar on ground, hips hinged",
+                "end": "standing tall, shoulders back"
+            },
+            "good_posture": [
+                "flat back",
+                "hips and shoulders rise together",
+                "bar close to shins"
+            ],
+            "bad_posture": [
+                "rounded back",
+                "hips shooting up first",
+                "bar drifting forward"
+            ],
+            "common_mistakes": [
+                "Jerking the bar off the floor",
+                "Not locking out properly"
+            ],
+            "safety_tips": [
+                "Warm up with lighter weights",
+                "Engage lats before lift"
+            ],
+            "video_demo_url": "https://example.com/deadlift-demo"
+        },
+        {
+            "id": "1006",
+            "name": "Bench Press",
+            "description": "A classic upper-body compound exercise for chest, shoulders, and triceps.",
+            "primary_muscles": [
+                "chest"
+            ],
+            "secondary_muscles": [
+                "shoulders",
+                "triceps"
+            ],
+            "equipment": "barbell",
+            "difficulty": "intermediate",
+            "category": "strength",
+            "mechanics": "compound",
+            "instructions": "Lie on bench, feet flat. Grip bar slightly wider than shoulders. Lower bar to mid-chest, then press upward until arms are straight.",
+            "range_of_motion": {
+                "start": "arms fully extended above chest",
+                "end": "bar touches mid-chest"
+            },
+            "good_posture": [
+                "scapula retracted",
+                "feet firmly planted",
+                "wrists neutral"
+            ],
+            "bad_posture": [
+                "elbows flaring out",
+                "shoulders lifting off bench"
+            ],
+            "common_mistakes": [
+                "Bouncing bar off chest",
+                "Inconsistent grip width"
+            ],
+            "safety_tips": [
+                "Use a spotter for heavy loads",
+                "Keep wrists stacked above elbows"
+            ],
+            "video_demo_url": "https://example.com/benchpress-demo"
+        },
+        {
+            "id": "1007",
+            "name": "Lunge",
+            "description": "A unilateral leg exercise developing strength and balance.",
+            "primary_muscles": [
+                "quadriceps",
+                "glutes"
+            ],
+            "secondary_muscles": [
+                "hamstrings",
+                "core"
+            ],
+            "equipment": "bodyweight",
+            "difficulty": "beginner",
+            "category": "strength",
+            "mechanics": "compound",
+            "instructions": "Stand upright, step forward with one leg, lowering hips until both knees are bent at 90°. Push back to start.",
+            "range_of_motion": {
+                "start": "standing upright",
+                "end": "rear knee close to floor, front thigh parallel"
+            },
+            "good_posture": [
+                "upright torso",
+                "front knee above ankle",
+                "balanced weight"
+            ],
+            "bad_posture": [
+                "knee collapsing inward",
+                "leaning forward",
+                "heel lifting"
+            ],
+            "common_mistakes": [
+                "Overstriding",
+                "Losing balance"
+            ],
+            "safety_tips": [
+                "Keep core tight",
+                "Control descent and ascent"
+            ],
+            "video_demo_url": "https://example.com/lunge-demo"
+        },
+        {
+            "id": "1008",
+            "name": "Overhead Press",
+            "description": "A vertical pressing movement focusing on shoulder and triceps strength.",
+            "primary_muscles": [
+                "shoulders"
+            ],
+            "secondary_muscles": [
+                "triceps",
+                "core"
+            ],
+            "equipment": "barbell",
+            "difficulty": "intermediate",
+            "category": "strength",
+            "mechanics": "compound",
+            "instructions": "Stand tall with bar at shoulder height. Engage core, press bar overhead until arms fully extended, then lower under control.",
+            "range_of_motion": {
+                "start": "bar at upper chest",
+                "end": "arms locked out overhead"
+            },
+            "good_posture": [
+                "neutral spine",
+                "glutes engaged",
+                "bar path straight"
+            ],
+            "bad_posture": [
+                "arching lower back",
+                "bar moving forward"
+            ],
+            "common_mistakes": [
+                "Leaning back excessively",
+                "Using legs unintentionally"
+            ],
+            "safety_tips": [
+                "Brace core before pressing",
+                "Avoid locking elbows harshly"
+            ],
+            "video_demo_url": "https://example.com/overheadpress-demo"
+        },
+        {
+            "id": "1009",
+            "name": "Bicep Curl",
+            "description": "An isolation exercise that strengthens the biceps brachii.",
+            "primary_muscles": [
+                "biceps"
+            ],
+            "secondary_muscles": [
+                "forearms"
+            ],
+            "equipment": "dumbbell",
+            "difficulty": "beginner",
+            "category": "strength",
+            "mechanics": "isolation",
+            "instructions": "Stand upright holding dumbbells at your sides. Curl the weights toward your shoulders while keeping elbows close to the torso, then lower slowly.",
+            "range_of_motion": {
+                "start": "arms fully extended",
+                "end": "elbows fully flexed"
+            },
+            "good_posture": [
+                "elbows stationary",
+                "shoulders relaxed",
+                "controlled movement"
+            ],
+            "bad_posture": [
+                "swinging weights",
+                "elbows moving forward"
+            ],
+            "common_mistakes": [
+                "Using momentum",
+                "Incomplete extension"
+            ],
+            "safety_tips": [
+                "Avoid jerky movements",
+                "Control the eccentric phase"
+            ],
+            "video_demo_url": "https://example.com/bicepcurl-demo"
+        },
+        {
+            "id": "1010",
+            "name": "Burpee",
+            "description": "A full-body conditioning exercise combining a squat, plank, and jump.",
+            "primary_muscles": [
+                "chest",
+                "quadriceps"
+            ],
+            "secondary_muscles": [
+                "shoulders",
+                "core",
+                "glutes"
+            ],
+            "equipment": "bodyweight",
+            "difficulty": "intermediate",
+            "category": "cardio",
+            "mechanics": "compound",
+            "instructions": "From standing, drop into a squat, place hands on the floor, jump feet back to plank, perform a push-up, jump feet forward, and explosively jump upward with arms overhead.",
+            "range_of_motion": {
+                "start": "standing tall",
+                "end": "full jump with arms extended overhead"
+            },
+            "good_posture": [
+                "neutral spine in plank",
+                "knees aligned during squat",
+                "soft landing on feet"
+            ],
+            "bad_posture": [
+                "hips sagging in plank",
+                "landing on stiff legs",
+                "improper push-up form"
+            ],
+            "common_mistakes": [
+                "Skipping full push-up",
+                "Poor landing mechanics"
+            ],
+            "safety_tips": [
+                "Land softly to protect knees",
+                "Modify by removing push-up or jump if needed"
+            ],
+            "video_demo_url": "https://example.com/burpee-demo"
+        }
+    ]
+}

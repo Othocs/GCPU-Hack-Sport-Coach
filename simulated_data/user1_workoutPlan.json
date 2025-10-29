@@ -1,0 +1,591 @@
+{
+    "user_id": "1234567890",
+    "user_name": "John Doe",
+    "project_id": "sportcoach-476609",
+    "weeks": [
+      {
+        "week": 1,
+        "sessions": [
+          {
+            "week": 1,
+            "day": "Monday",
+            "duration": "1 hour",
+            "intensity": "moderate",
+            "exercises": [
+              {
+                "id": "1009",
+                "name": "Bicep Curl",
+                "sets": 3,
+                "repetitions": 12,
+                "rest_seconds": 60,
+                "notes": "Maintain controlled tempo and prioritize technique."
+              },
+              {
+                "type": "break",
+                "duration_seconds": 60,
+                "notes": "Light mobility work and hydration."
+              },
+              {
+                "id": "1007",
+                "name": "Lunge",
+                "sets": 3,
+                "repetitions": 12,
+                "rest_seconds": 60,
+                "notes": "Maintain controlled tempo and prioritize technique."
+              },
+              {
+                "type": "break",
+                "duration_seconds": 60,
+                "notes": "Light mobility work and hydration."
+              },
+              {
+                "id": "1004",
+                "name": "Plank",
+                "sets": 3,
+                "repetitions": 12,
+                "rest_seconds": 60,
+                "notes": "Maintain controlled tempo and prioritize technique."
+              },
+              {
+                "type": "break",
+                "duration_seconds": 60,
+                "notes": "Deep breathing and stretching cooldown."
+              }
+            ]
+          },
+          {
+            "week": 1,
+            "day": "Wednesday",
+            "duration": "1 hour",
+            "intensity": "moderate",
+            "exercises": [
+              {
+                "id": "1001",
+                "name": "Push-up",
+                "sets": 3,
+                "repetitions": 12,
+                "rest_seconds": 60,
+                "notes": "Maintain controlled tempo and prioritize technique."
+              },
+              {
+                "type": "break",
+                "duration_seconds": 60,
+                "notes": "Light mobility work and hydration."
+              },
+              {
+                "id": "1002",
+                "name": "Squat",
+                "sets": 3,
+                "repetitions": 12,
+                "rest_seconds": 60,
+                "notes": "Maintain controlled tempo and prioritize technique."
+              },
+              {
+                "type": "break",
+                "duration_seconds": 60,
+                "notes": "Light mobility work and hydration."
+              },
+              {
+                "id": "1009",
+                "name": "Bicep Curl",
+                "sets": 3,
+                "repetitions": 12,
+                "rest_seconds": 60,
+                "notes": "Maintain controlled tempo and prioritize technique."
+              },
+              {
+                "type": "break",
+                "duration_seconds": 60,
+                "notes": "Deep breathing and stretching cooldown."
+              }
+            ]
+          },
+          {
+            "week": 1,
+            "day": "Friday",
+            "duration": "1 hour",
+            "intensity": "moderate",
+            "exercises": [
+              {
+                "id": "1007",
+                "name": "Lunge",
+                "sets": 3,
+                "repetitions": 12,
+                "rest_seconds": 60,
+                "notes": "Maintain controlled tempo and prioritize technique."
+              },
+              {
+                "type": "break",
+                "duration_seconds": 60,
+                "notes": "Light mobility work and hydration."
+              },
+              {
+                "id": "1004",
+                "name": "Plank",
+                "sets": 3,
+                "repetitions": 12,
+                "rest_seconds": 60,
+                "notes": "Maintain controlled tempo and prioritize technique."
+              },
+              {
+                "type": "break",
+                "duration_seconds": 60,
+                "notes": "Light mobility work and hydration."
+              },
+              {
+                "id": "1001",
+                "name": "Push-up",
+                "sets": 3,
+                "repetitions": 12,
+                "rest_seconds": 60,
+                "notes": "Maintain controlled tempo and prioritize technique."
+              },
+              {
+                "type": "break",
+                "duration_seconds": 60,
+                "notes": "Deep breathing and stretching cooldown."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "week": 2,
+        "sessions": [
+          {
+            "week": 2,
+            "day": "Monday",
+            "duration": "1 hour",
+            "intensity": "moderate",
+            "exercises": [
+              {
+                "id": "1002",
+                "name": "Squat",
+                "sets": 3,
+                "repetitions": 12,
+                "rest_seconds": 60,
+                "notes": "Maintain controlled tempo and prioritize technique."
+              },
+              {
+                "type": "break",
+                "duration_seconds": 60,
+                "notes": "Light mobility work and hydration."
+              },
+              {
+                "id": "1009",
+                "name": "Bicep Curl",
+                "sets": 3,
+                "repetitions": 12,
+                "rest_seconds": 60,
+                "notes": "Maintain controlled tempo and prioritize technique."
+              },
+              {
+                "type": "break",
+                "duration_seconds": 60,
+                "notes": "Light mobility work and hydration."
+              },
+              {
+                "id": "1007",
+                "name": "Lunge",
+                "sets": 3,
+                "repetitions": 12,
+                "rest_seconds": 60,
+                "notes": "Maintain controlled tempo and prioritize technique."
+              },
+              {
+                "type": "break",
+                "duration_seconds": 60,
+                "notes": "Deep breathing and stretching cooldown."
+              }
+            ]
+          },
+          {
+            "week": 2,
+            "day": "Wednesday",
+            "duration": "1 hour",
+            "intensity": "moderate",
+            "exercises": [
+              {
+                "id": "1004",
+                "name": "Plank",
+                "sets": 3,
+                "repetitions": 12,
+                "rest_seconds": 60,
+                "notes": "Maintain controlled tempo and prioritize technique."
+              },
+              {
+                "type": "break",
+                "duration_seconds": 60,
+                "notes": "Light mobility work and hydration."
+              },
+              {
+                "id": "1001",
+                "name": "Push-up",
+                "sets": 3,
+                "repetitions": 12,
+                "rest_seconds": 60,
+                "notes": "Maintain controlled tempo and prioritize technique."
+              },
+              {
+                "type": "break",
+                "duration_seconds": 60,
+                "notes": "Light mobility work and hydration."
+              },
+              {
+                "id": "1002",
+                "name": "Squat",
+                "sets": 3,
+                "repetitions": 12,
+                "rest_seconds": 60,
+                "notes": "Maintain controlled tempo and prioritize technique."
+              },
+              {
+                "type": "break",
+                "duration_seconds": 60,
+                "notes": "Deep breathing and stretching cooldown."
+              }
+            ]
+          },
+          {
+            "week": 2,
+            "day": "Friday",
+            "duration": "1 hour",
+            "intensity": "moderate",
+            "exercises": [
+              {
+                "id": "1009",
+                "name": "Bicep Curl",
+                "sets": 3,
+                "repetitions": 12,
+                "rest_seconds": 60,
+                "notes": "Maintain controlled tempo and prioritize technique."
+              },
+              {
+                "type": "break",
+                "duration_seconds": 60,
+                "notes": "Light mobility work and hydration."
+              },
+              {
+                "id": "1007",
+                "name": "Lunge",
+                "sets": 3,
+                "repetitions": 12,
+                "rest_seconds": 60,
+                "notes": "Maintain controlled tempo and prioritize technique."
+              },
+              {
+                "type": "break",
+                "duration_seconds": 60,
+                "notes": "Light mobility work and hydration."
+              },
+              {
+                "id": "1004",
+                "name": "Plank",
+                "sets": 3,
+                "repetitions": 12,
+                "rest_seconds": 60,
+                "notes": "Maintain controlled tempo and prioritize technique."
+              },
+              {
+                "type": "break",
+                "duration_seconds": 60,
+                "notes": "Deep breathing and stretching cooldown."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "week": 3,
+        "sessions": [
+          {
+            "week": 3,
+            "day": "Monday",
+            "duration": "1 hour",
+            "intensity": "moderate",
+            "exercises": [
+              {
+                "id": "1001",
+                "name": "Push-up",
+                "sets": 3,
+                "repetitions": 12,
+                "rest_seconds": 60,
+                "notes": "Maintain controlled tempo and prioritize technique."
+              },
+              {
+                "type": "break",
+                "duration_seconds": 60,
+                "notes": "Light mobility work and hydration."
+              },
+              {
+                "id": "1002",
+                "name": "Squat",
+                "sets": 3,
+                "repetitions": 12,
+                "rest_seconds": 60,
+                "notes": "Maintain controlled tempo and prioritize technique."
+              },
+              {
+                "type": "break",
+                "duration_seconds": 60,
+                "notes": "Light mobility work and hydration."
+              },
+              {
+                "id": "1009",
+                "name": "Bicep Curl",
+                "sets": 3,
+                "repetitions": 12,
+                "rest_seconds": 60,
+                "notes": "Maintain controlled tempo and prioritize technique."
+              },
+              {
+                "type": "break",
+                "duration_seconds": 60,
+                "notes": "Deep breathing and stretching cooldown."
+              }
+            ]
+          },
+          {
+            "week": 3,
+            "day": "Wednesday",
+            "duration": "1 hour",
+            "intensity": "moderate",
+            "exercises": [
+              {
+                "id": "1007",
+                "name": "Lunge",
+                "sets": 3,
+                "repetitions": 12,
+                "rest_seconds": 60,
+                "notes": "Maintain controlled tempo and prioritize technique."
+              },
+              {
+                "type": "break",
+                "duration_seconds": 60,
+                "notes": "Light mobility work and hydration."
+              },
+              {
+                "id": "1004",
+                "name": "Plank",
+                "sets": 3,
+                "repetitions": 12,
+                "rest_seconds": 60,
+                "notes": "Maintain controlled tempo and prioritize technique."
+              },
+              {
+                "type": "break",
+                "duration_seconds": 60,
+                "notes": "Light mobility work and hydration."
+              },
+              {
+                "id": "1001",
+                "name": "Push-up",
+                "sets": 3,
+                "repetitions": 12,
+                "rest_seconds": 60,
+                "notes": "Maintain controlled tempo and prioritize technique."
+              },
+              {
+                "type": "break",
+                "duration_seconds": 60,
+                "notes": "Deep breathing and stretching cooldown."
+              }
+            ]
+          },
+          {
+            "week": 3,
+            "day": "Friday",
+            "duration": "1 hour",
+            "intensity": "moderate",
+            "exercises": [
+              {
+                "id": "1002",
+                "name": "Squat",
+                "sets": 3,
+                "repetitions": 12,
+                "rest_seconds": 60,
+                "notes": "Maintain controlled tempo and prioritize technique."
+              },
+              {
+                "type": "break",
+                "duration_seconds": 60,
+                "notes": "Light mobility work and hydration."
+              },
+              {
+                "id": "1009",
+                "name": "Bicep Curl",
+                "sets": 3,
+                "repetitions": 12,
+                "rest_seconds": 60,
+                "notes": "Maintain controlled tempo and prioritize technique."
+              },
+              {
+                "type": "break",
+                "duration_seconds": 60,
+                "notes": "Light mobility work and hydration."
+              },
+              {
+                "id": "1007",
+                "name": "Lunge",
+                "sets": 3,
+                "repetitions": 12,
+                "rest_seconds": 60,
+                "notes": "Maintain controlled tempo and prioritize technique."
+              },
+              {
+                "type": "break",
+                "duration_seconds": 60,
+                "notes": "Deep breathing and stretching cooldown."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "week": 4,
+        "sessions": [
+          {
+            "week": 4,
+            "day": "Monday",
+            "duration": "1 hour",
+            "intensity": "moderate",
+            "exercises": [
+              {
+                "id": "1004",
+                "name": "Plank",
+                "sets": 3,
+                "repetitions": 12,
+                "rest_seconds": 60,
+                "notes": "Maintain controlled tempo and prioritize technique."
+              },
+              {
+                "type": "break",
+                "duration_seconds": 60,
+                "notes": "Light mobility work and hydration."
+              },
+              {
+                "id": "1001",
+                "name": "Push-up",
+                "sets": 3,
+                "repetitions": 12,
+                "rest_seconds": 60,
+                "notes": "Maintain controlled tempo and prioritize technique."
+              },
+              {
+                "type": "break",
+                "duration_seconds": 60,
+                "notes": "Light mobility work and hydration."
+              },
+              {
+                "id": "1002",
+                "name": "Squat",
+                "sets": 3,
+                "repetitions": 12,
+                "rest_seconds": 60,
+                "notes": "Maintain controlled tempo and prioritize technique."
+              },
+              {
+                "type": "break",
+                "duration_seconds": 60,
+                "notes": "Deep breathing and stretching cooldown."
+              }
+            ]
+          },
+          {
+            "week": 4,
+            "day": "Wednesday",
+            "duration": "1 hour",
+            "intensity": "moderate",
+            "exercises": [
+              {
+                "id": "1009",
+                "name": "Bicep Curl",
+                "sets": 3,
+                "repetitions": 12,
+                "rest_seconds": 60,
+                "notes": "Maintain controlled tempo and prioritize technique."
+              },
+              {
+                "type": "break",
+                "duration_seconds": 60,
+                "notes": "Light mobility work and hydration."
+              },
+              {
+                "id": "1007",
+                "name": "Lunge",
+                "sets": 3,
+                "repetitions": 12,
+                "rest_seconds": 60,
+                "notes": "Maintain controlled tempo and prioritize technique."
+              },
+              {
+                "type": "break",
+                "duration_seconds": 60,
+                "notes": "Light mobility work and hydration."
+              },
+              {
+                "id": "1004",
+                "name": "Plank",
+                "sets": 3,
+                "repetitions": 12,
+                "rest_seconds": 60,
+                "notes": "Maintain controlled tempo and prioritize technique."
+              },
+              {
+                "type": "break",
+                "duration_seconds": 60,
+                "notes": "Deep breathing and stretching cooldown."
+              }
+            ]
+          },
+          {
+            "week": 4,
+            "day": "Friday",
+            "duration": "1 hour",
+            "intensity": "moderate",
+            "exercises": [
+              {
+                "id": "1001",
+                "name": "Push-up",
+                "sets": 3,
+                "repetitions": 12,
+                "rest_seconds": 60,
+                "notes": "Maintain controlled tempo and prioritize technique."
+              },
+              {
+                "type": "break",
+                "duration_seconds": 60,
+                "notes": "Light mobility work and hydration."
+              },
+              {
+                "id": "1002",
+                "name": "Squat",
+                "sets": 3,
+                "repetitions": 12,
+                "rest_seconds": 60,
+                "notes": "Maintain controlled tempo and prioritize technique."
+              },
+              {
+                "type": "break",
+                "duration_seconds": 60,
+                "notes": "Light mobility work and hydration."
+              },
+              {
+                "id": "1009",
+                "name": "Bicep Curl",
+                "sets": 3,
+                "repetitions": 12,
+                "rest_seconds": 60,
+                "notes": "Maintain controlled tempo and prioritize technique."
+              },
+              {
+                "type": "break",
+                "duration_seconds": 60,
+                "notes": "Deep breathing and stretching cooldown."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }

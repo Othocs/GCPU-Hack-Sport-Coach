@@ -1,0 +1,47 @@
+{
+    "id": "1234567890",
+    "first_name": "John",
+    "last_name": "Doe",
+    "email": "john.doe@example.com",
+    "birthday": "1990-01-01",
+    "gender": "male",
+    "height": 180,
+    "weight": 70,
+    "goal": "lose weight, gain muscle",
+    "activity_level": "moderate",
+    "experience_level": "beginner",
+    "training_frequency": "3 times a week",
+    "training_days": ["Monday", "Wednesday", "Friday"],
+    "training_time": "1 hour",
+    "training_intensity": "moderate",
+    "previous_injuries": ["knee pain", "shoulder pain"],
+    "current_medications": ["aspirin", "ibuprofen"],
+    "current_health_conditions": ["high blood pressure", "high cholesterol"],
+    "habits": [
+        {
+            "name": "eat 5 fruits",
+            "frequency": "daily"
+        },
+        {
+            "name": "drink 2 liters of water",
+            "frequency": "daily"
+        },
+        {
+            "name": "go to gym 3 times a week",
+            "frequency" : "weekly"
+        }
+    ],
+    "medals" : ["1234567890", "1234567891", "1234567892"],
+    "eating_diet" : {
+        "likes" : ["apple", "banana", "orange"],
+        "dislikes" : ["beef", "pork", "chicken"],
+        "allergies" : ["peanuts", "milk", "eggs"],
+        "restrictions" : ["no sugar", "no gluten", "no dairy"]
+    },
+    "sleeping_pattern" : {
+        "sleep_hours" : 8,
+        "sleep_quality" : "good",
+        "sleep_pattern" : "regular"
+    }
+
+}
