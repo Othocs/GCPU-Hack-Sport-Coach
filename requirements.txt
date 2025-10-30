@@ -1,6 +1,9 @@
-opencv-python==4.8.1.78
-mediapipe==0.10.7
-numpy==1.24.3
-tensorflow==2.13.0
-google-genai
-python-dotenv==1.0.0
+# Core dependencies
+opencv-python>=4.8.1.78,<5.0.0
+mediapipe>=0.10.7,<0.11.0
+numpy>=1.24.3,<2.0.0
+tensorflow>=2.13.0,<3.0.0
+
+# API and utilities
+google-generativeai>=0.3.0,<1.0.0
+python-dotenv>=1.0.0,<2.0.0
