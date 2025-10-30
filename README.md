@@ -59,16 +59,14 @@ For advanced analysis using Google's Gemini API:
   - `analyzers/`: Exercise-specific analysis modules (squat, pushup, plank, etc.)
   - `landmarks.py`: Landmark detection and processing
   - `angles.py`: Angle calculations for joint analysis
-  - `detect.py`: Main detection pipeline
+  - `detect.py`: Quick detection pipeline
   - `fatigue.py`: Fatigue detection and analysis
   - `exercise_recognizer.py`: Automatic exercise recognition
-  - `progress_tracker.py`: Track and analyze workout progress over time
   - `summary.py`: Generate analysis summaries
   - `generic.py`: Generic exercise analysis utilities
 - `skeletton.py`: Main application script
 - `gemini_call.py`: Integration with Google's Gemini API
 - `requirements.txt`: Python dependencies
-- `progress_data/`: Directory containing user progress data (auto-created)
 
 ## Features
 
