@@ -69,7 +69,6 @@ For advanced analysis using Google's Gemini API:
 - `gemini_call.py`: Integration with Google's Gemini API
 - `requirements.txt`: Python dependencies
 
-
 ## Features
 
 ### Core Functionality
