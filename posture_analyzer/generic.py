@@ -1,4 +1,4 @@
-from typing import Dict, Optional, any
+from typing import Dict, Optional
 from .landmarks import PoseLandmark, _landmarks_to_np
 from .angles import _angle_at
 from .analyzers.squat import analyze_squat

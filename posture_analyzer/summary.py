@@ -1,4 +1,5 @@
 from typing import Dict
+
 def summarize_analysis(analysis: dict, max_angles: int = 4, max_mistakes: int = 2) -> str:
     severity = analysis.get('severity', 'good')
     angles = analysis.get('angles', {}) or {}

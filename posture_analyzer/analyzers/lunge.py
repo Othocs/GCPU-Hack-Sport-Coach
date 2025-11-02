@@ -1,4 +1,4 @@
-from typing import Dict, any
+from typing import Dict
 from ..landmarks import PoseLandmark, get_landmark_3d, _landmarks_to_np, _safe_x
 from ..angles import calculate_angle
 
