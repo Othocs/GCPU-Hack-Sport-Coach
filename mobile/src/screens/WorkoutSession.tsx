@@ -172,13 +172,6 @@ export const WorkoutSession: React.FC = () => {
         style={styles.camera}
         facing="front"
       >
-        {isActive && analysis?.landmarks && analysis.landmarks.length > 0 && (
-          <SkeletonOverlay
-            landmarks={analysis.landmarks}
-            severity={analysis.severity}
-          />
-        )}
-
         {isActive && (
           <FeedbackOverlay analysis={analysis} isAnalyzing={isAnalyzing} />
         )}

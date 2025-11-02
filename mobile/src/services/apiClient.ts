@@ -8,7 +8,7 @@ import {
   HealthResponse,
 } from '../types/analysis';
 
-const DEFAULT_API_URL = process.env.EXPO_PUBLIC_API_URL || 'http:
+const DEFAULT_API_URL = process.env.EXPO_PUBLIC_API_URL || 'http://localhost:8000';
 
 class PostureAPIClient {
   private client: AxiosInstance;
