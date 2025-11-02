@@ -1,6 +1,3 @@
-/**
- * Type definitions for posture analysis API responses
- */
 
 export interface Mistake {
   issue: string;

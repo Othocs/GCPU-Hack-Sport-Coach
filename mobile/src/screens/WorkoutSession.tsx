@@ -1,8 +1,3 @@
-/**
- * Workout Session Screen
- * Main screen with camera, real-time analysis, and feedback
- */
-
 import React, { useState, useRef, useEffect } from 'react';
 import {
   View,
@@ -17,6 +12,7 @@ import {
 import { CameraView, useCameraPermissions } from 'expo-camera';
 import { FeedbackOverlay } from '../components/FeedbackOverlay';
 import { ExerciseSelector } from '../components/ExerciseSelector';
+import { SkeletonOverlay } from '../components/SkeletonOverlay';
 import { apiClient } from '../services/apiClient';
 import { captureFrame, FrameThrottler } from '../utils/frameCapture';
 import { AnalysisResponse, ExerciseType } from '../types/analysis';
@@ -32,11 +28,10 @@ export const WorkoutSession: React.FC = () => {
   const [isLoadingGemini, setIsLoadingGemini] = useState(false);
 
   const cameraRef = useRef<CameraView>(null);
-  const throttlerRef = useRef(new FrameThrottler(2)); // 2 FPS for POC
+  const throttlerRef = useRef(new FrameThrottler(2));
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
-    // Cleanup on unmount
     return () => {
       if (intervalRef.current) {
         clearInterval(intervalRef.current);
@@ -55,7 +50,6 @@ export const WorkoutSession: React.FC = () => {
   };
 
   const startAnalysis = async () => {
-    // Check API connectivity first
     const isReachable = await apiClient.isReachable();
     if (!isReachable) {
       Alert.alert(
@@ -67,10 +61,9 @@ export const WorkoutSession: React.FC = () => {
 
     setIsActive(true);
 
-    // Start continuous frame capture
     intervalRef.current = setInterval(async () => {
       await analyzeCurrentFrame();
-    }, 500); // Check every 500ms, throttler will limit to 2 FPS
+    }, 500);
   };
 
   const stopAnalysis = () => {
@@ -174,20 +167,23 @@ export const WorkoutSession: React.FC = () => {
 
   return (
     <View style={styles.container}>
-      {/* Camera View */}
       <CameraView
         ref={cameraRef}
         style={styles.camera}
         facing="front"
       >
-        {/* Feedback Overlay */}
+        {isActive && analysis?.landmarks && analysis.landmarks.length > 0 && (
+          <SkeletonOverlay
+            landmarks={analysis.landmarks}
+            severity={analysis.severity}
+          />
+        )}
+
         {isActive && (
           <FeedbackOverlay analysis={analysis} isAnalyzing={isAnalyzing} />
         )}
 
-        {/* Bottom Controls */}
         <View style={styles.bottomContainer}>
-          {/* Exercise Selector */}
           {!isActive && (
             <ExerciseSelector
               selectedExercise={selectedExercise}
@@ -195,7 +191,6 @@ export const WorkoutSession: React.FC = () => {
             />
           )}
 
-          {/* Control Buttons */}
           <View style={styles.controlsRow}>
             {!isActive ? (
               <TouchableOpacity
@@ -225,7 +220,6 @@ export const WorkoutSession: React.FC = () => {
         </View>
       </CameraView>
 
-      {/* Gemini Feedback Modal */}
       <Modal
         visible={geminiModalVisible}
         animationType="slide"

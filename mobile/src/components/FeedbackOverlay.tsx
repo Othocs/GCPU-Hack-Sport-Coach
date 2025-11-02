@@ -1,7 +1,3 @@
-/**
- * Feedback overlay component
- * Displays posture analysis results on top of camera view
- */
 
 import React from 'react';
 import { View, Text, StyleSheet, ScrollView } from 'react-native';
@@ -41,17 +37,16 @@ export const FeedbackOverlay: React.FC<FeedbackOverlayProps> = ({
     );
   }
 
-  // Determine severity color
   const getSeverityColor = (severity?: string) => {
     switch (severity) {
       case 'severe':
-        return '#EF4444'; // Red
+        return '#EF4444'; 
       case 'moderate':
-        return '#F59E0B'; // Yellow
+        return '#F59E0B'; 
       case 'good':
-        return '#10B981'; // Green
+        return '#10B981'; 
       default:
-        return '#6B7280'; // Gray
+        return '#6B7280'; 
     }
   };
 

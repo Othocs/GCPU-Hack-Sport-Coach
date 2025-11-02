@@ -1,129 +1,86 @@
-# AI Sport Coach - Posture Analysis Pipeline
+# AI Sport Coach
 
-## Overview
-AI Sport Coach is a computer vision-based application that analyzes workout postures in real-time, providing feedback and guidance to users performing various exercises. The system uses MediaPipe for pose estimation and custom analyzers for different exercises.
+Real-time posture analysis for workout exercises using MediaPipe and Gemini AI. Mobile app provides live form correction feedback through camera-based pose detection.
+
+## Tech Stack
+
+**Backend:** Python, FastAPI, MediaPipe, Gemini AI
+**Mobile:** React Native (Expo), TypeScript
+**Package Management:** UV for Python, npm for mobile
+
+## Setup
+
+### Backend
+
+1. Install Python dependencies:
+```bash
+uv sync
+```
+
+2. Download MediaPipe model:
+```bash
+curl -o pose_landmarker_lite.task https://storage.googleapis.com/mediapipe-models/pose_landmarker/pose_landmarker_lite/float16/latest/pose_landmarker_lite.task
+```
+
+3. (Optional) Set Gemini API key in `.env`:
+```bash
+GEMINI_API_KEY=your_key_here
+```
+
+4. Start backend with ngrok:
+```bash
+uv run python start_backend_ngrok.py
+```
+
+Copy the ngrok URL from the output.
+
+### Mobile App
+
+1. Install dependencies:
+```bash
+cd mobile
+npm install
+```
+
+2. Configure backend URL in `mobile/.env`:
+```
+EXPO_PUBLIC_API_URL=https://your-ngrok-url.ngrok-free.app
+```
+
+3. Start Expo:
+```bash
+npm start
+```
+
+4. Scan QR code with Expo Go app (iOS/Android)
+
+## Usage
+
+1. Grant camera permissions when prompted
+2. Select exercise type or use auto-detect
+3. Tap "Start Analysis" to begin
+4. View real-time feedback overlay with skeleton visualization
+5. Tap "AI Feedback" for detailed coaching from Gemini
 
 ## Supported Exercises
+
 - Squats
 - Push-ups
 - Planks
 - Deadlifts
 - Lunges
 
-## Prerequisites
-- Python 3.8+
-- pip (Python package manager)
-- Webcam or video input source
-
-## Installation
-
-1. Clone the repository:
-   ```bash
-   git clone [your-repository-url]
-   cd GCPU-Hack-Sport-Coach
-   ```
-
-2. Create and activate a virtual environment (recommended):
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows: .\venv\Scripts\activate
-   ```
-
-3. Install the required packages:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-## Usage
-
-### Real-time Posture Analysis
-Run the main script to start the webcam feed and analyze your posture in real-time:
-```bash
-python skeletton.py
-```
-
-### Using the Gemini API (Optional)
-For advanced analysis using Google's Gemini API:
-1. Create a `.env` file in the project root
-2. Add your Gemini API key:
-   ```
-   GEMINI_API_KEY=your_api_key_here
-   ```
-3. Run the Gemini analysis script:
-   ```bash
-   python gemini_call.py
-   ```
-
 ## Project Structure
-- `posture_analyzer/`: Core posture analysis modules
-  - `analyzers/`: Exercise-specific analysis modules (squat, pushup, plank, etc.)
-  - `landmarks.py`: Landmark detection and processing
-  - `angles.py`: Angle calculations for joint analysis
-  - `detect.py`: Quick detection pipeline
-  - `fatigue.py`: Fatigue detection and analysis
-  - `exercise_recognizer.py`: Automatic exercise recognition
-  - `summary.py`: Generate analysis summaries
-  - `generic.py`: Generic exercise analysis utilities
-- `skeletton.py`: Main application script
-- `gemini_call.py`: Integration with Google's Gemini API
-- `requirements.txt`: Python dependencies
 
-## Features
-
-### Core Functionality
-- Real-time pose estimation using MediaPipe
-- Exercise-specific form analysis
-- Visual feedback on posture
-- Performance metrics and repetition counting
-
-### Advanced Analysis
-- **Automatic Exercise Recognition**: Detects the type of exercise being performed
-- **Fatigue Detection**: Monitors form degradation and muscle fatigue
-- **Form Quality Scoring**: Rates the quality of each repetition
-- **Joint Angle Analysis**: Tracks joint angles for precise form assessment
-
-### Progress Tracking
-- Session history and statistics
-- Performance trends over time
-- Detailed exercise analytics
-- Exportable progress reports
-
-### Integration
-- Google Gemini AI for advanced analysis
-- Support for multiple users
-- Data export in JSON format
-
-## Usage Examples
-
-### Basic Usage
-```python
-# Initialize the posture analyzer
-from posture_analyzer import analyze_generic_exercise, summarize_analysis
-
-# Analyze a frame
-analysis = analyze_generic_exercise(landmarks, exercise_type="squat")
-print(summarize_analysis(analysis))
 ```
-
-### Using Advanced Features
-```python
-from posture_analyzer import FatigueAnalyzer, ExerciseRecognizer
-
-# Initialize components
-fatigue_analyzer = FatigueAnalyzer()
-exercise_recognizer = ExerciseRecognizer()
-
-# In your video processing loop
-while True:
-    # Get landmarks from your video feed
-    # ...
-    
-    # Recognize exercise
-    exercise, confidence = exercise_recognizer.recognize(landmarks)
-    
-    # Analyze fatigue
-    fatigue_scores = fatigue_analyzer.update(landmarks)
-    
-    if fatigue_analyzer.is_fatigued():
-        print("Warning: Signs of fatigue detected!")
+├── api/                    # FastAPI backend
+├── posture_analyzer/       # Pose detection & analysis logic
+├── mobile/                 # React Native app
+│   ├── src/
+│   │   ├── components/     # UI components
+│   │   ├── screens/        # Main workout screen
+│   │   ├── services/       # API client
+│   │   └── types/          # TypeScript definitions
+├── start_backend_ngrok.py  # Backend startup script
+└── pyproject.toml          # Python dependencies
 ```

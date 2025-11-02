@@ -1,7 +1,3 @@
-/**
- * Exercise selector component
- * Allows users to choose which exercise to track or use auto-detection
- */
 
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';

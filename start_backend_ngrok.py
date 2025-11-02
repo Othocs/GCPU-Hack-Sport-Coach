@@ -1,8 +1,5 @@
 #!/usr/bin/env python3
-"""
-Start FastAPI backend with ngrok tunnel
-Provides a public URL for mobile app connectivity
-"""
+"""Start FastAPI backend with ngrok tunnel"""
 
 import sys
 import os
@@ -10,7 +7,6 @@ import threading
 import time
 from pyngrok import ngrok
 
-# Add current directory to path
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -32,13 +28,9 @@ def print_banner(ngrok_url):
 def start_ngrok_tunnel(port=8000):
     """Start ngrok tunnel and return public URL"""
     try:
-        # Kill any existing ngrok tunnels
         ngrok.kill()
-
-        # Start new tunnel
         print("🔧 Creating ngrok tunnel...")
-        public_url = ngrok.connect(port, bind_tls=True)  # HTTPS only
-
+        public_url = ngrok.connect(port, bind_tls=True)
         return public_url.public_url
     except Exception as e:
         print(f"❌ Failed to create ngrok tunnel: {e}")
@@ -54,13 +46,12 @@ def run_backend():
     import uvicorn
     from api.main import app
 
-    # Run uvicorn server
     config = uvicorn.Config(
         app,
         host="0.0.0.0",
         port=8000,
         log_level="info",
-        access_log=False,  # Reduce noise
+        access_log=False,
     )
     server = uvicorn.Server(config)
     server.run()
@@ -71,14 +62,9 @@ def main():
     print("\n🔧 Starting AI Sport Coach Backend with Ngrok...")
     print("⏳ This may take a few seconds...\n")
 
-    # Start ngrok tunnel first
     ngrok_url = start_ngrok_tunnel(port=8000)
-
-    # Print instructions
     print_banner(ngrok_url)
 
-    # Start backend in main thread (blocking)
-    # Ngrok tunnel stays alive as long as this process runs
     try:
         run_backend()
     except KeyboardInterrupt:

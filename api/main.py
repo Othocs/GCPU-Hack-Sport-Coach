@@ -1,6 +1,5 @@
 """
 FastAPI backend for posture analysis
-Wraps the existing posture_analyzer system with REST API endpoints
 """
 
 from fastapi import FastAPI, HTTPException, UploadFile, File
@@ -15,7 +14,6 @@ from PIL import Image
 import sys
 import os
 
-# Add parent directory to path to import posture_analyzer
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from posture_analyzer.pose_detector import PoseDetector
@@ -27,21 +25,18 @@ from gemini_prompt import GEMINI_PROMPT
 
 app = FastAPI(title="Posture Analysis API", version="1.0.0")
 
-# Configure CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # In production, specify actual origins
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# Global instances
 pose_detector = None
 exercise_recognizer = None
 fatigue_analyzer = None
 
-# Exercise analyzer mapping
 EXERCISE_ANALYZERS = {
     'squat': squat.analyze_squat,
     'pushup': pushup.analyze_pushup,
@@ -51,11 +46,11 @@ EXERCISE_ANALYZERS = {
 }
 
 class AnalyzeRequest(BaseModel):
-    image: str  # base64 encoded image
-    exercise: Optional[str] = None  # Optional: specify exercise, or auto-detect
+    image: str
+    exercise: Optional[str] = None
 
 class GeminiFeedbackRequest(BaseModel):
-    image: str  # base64 encoded image
+    image: str
     exercise: str
     angles: Dict[str, float]
     mistakes: List[Dict[str, str]]
@@ -129,17 +124,11 @@ async def get_exercises():
 def base64_to_image(base64_string: str) -> np.ndarray:
     """Convert base64 string to OpenCV image"""
     try:
-        # Remove data URL prefix if present
         if ',' in base64_string:
             base64_string = base64_string.split(',')[1]
 
-        # Decode base64
         image_bytes = base64.b64decode(base64_string)
-
-        # Convert to PIL Image
         pil_image = Image.open(BytesIO(image_bytes))
-
-        # Convert to OpenCV format (BGR)
         image = cv2.cvtColor(np.array(pil_image), cv2.COLOR_RGB2BGR)
 
         return image
@@ -149,20 +138,8 @@ def base64_to_image(base64_string: str) -> np.ndarray:
 
 @app.post("/api/analyze")
 async def analyze_posture(request: AnalyzeRequest):
-    """
-    Analyze posture from a single frame
+    """Analyze posture from a single frame"""
 
-    Returns:
-    - exercise: detected exercise name
-    - confidence: detection confidence
-    - phase: exercise phase (init/mid/end)
-    - angles: key joint angles
-    - mistakes: list of form issues with severity
-    - corrections: specific fixes for each mistake
-    - fatigue: fatigue metrics
-    """
-
-    # Check models are initialized
     if pose_detector is None:
         raise HTTPException(
             status_code=503,
@@ -176,11 +153,9 @@ async def analyze_posture(request: AnalyzeRequest):
         )
 
     try:
-        # Validate input
         if not request.image or len(request.image.strip()) == 0:
             raise HTTPException(status_code=400, detail="Image data is empty")
 
-        # Decode image
         try:
             frame = base64_to_image(request.image)
         except HTTPException:
@@ -192,11 +167,9 @@ async def analyze_posture(request: AnalyzeRequest):
                 detail=f"Failed to decode image: {type(e).__name__}"
             )
 
-        # Validate frame
         if frame is None or frame.size == 0:
             raise HTTPException(status_code=400, detail="Decoded image is empty")
 
-        # Detect pose landmarks
         try:
             landmarks = pose_detector.detect(frame)
         except Exception as e:
@@ -215,7 +188,6 @@ async def analyze_posture(request: AnalyzeRequest):
                 "hint": "Ensure person is visible and well-lit"
             }
 
-        # Recognize exercise (or use specified one)
         try:
             if request.exercise:
                 exercise_name = request.exercise.lower()
@@ -231,12 +203,10 @@ async def analyze_posture(request: AnalyzeRequest):
                     exercise_name, confidence, phase = result
         except Exception as e:
             print(f"Exercise recognition error: {type(e).__name__}: {str(e)}")
-            # Continue with unknown exercise
             exercise_name = "unknown"
             confidence = 0.0
             phase = "unknown"
 
-        # Analyze posture for specific exercise
         analysis_result = {"angles": {}, "mistakes": [], "severity": "good"}
 
         if exercise_name and exercise_name in EXERCISE_ANALYZERS:
@@ -249,9 +219,7 @@ async def analyze_posture(request: AnalyzeRequest):
                 print(f"Exercise analysis error ({exercise_name}): {type(e).__name__}: {str(e)}")
                 import traceback
                 traceback.print_exc()
-                # Continue with empty analysis rather than failing completely
 
-        # Analyze fatigue
         fatigue_scores = {"overall": 0.0}
         try:
             if fatigue_analyzer:
@@ -260,14 +228,23 @@ async def analyze_posture(request: AnalyzeRequest):
                     fatigue_scores = result
         except Exception as e:
             print(f"Fatigue analysis error: {type(e).__name__}: {str(e)}")
-            # Continue with default fatigue scores
 
-        # Build response
+        landmarks_data = []
+        if landmarks:
+            for landmark in landmarks:
+                landmarks_data.append({
+                    "x": float(landmark.x),
+                    "y": float(landmark.y),
+                    "z": float(landmark.z),
+                    "visibility": float(landmark.visibility) if hasattr(landmark, 'visibility') else 1.0
+                })
+
         response = {
             "detected": True,
             "exercise": exercise_name if exercise_name else "unknown",
             "confidence": float(confidence) if confidence is not None else 0.0,
             "phase": phase if phase else "unknown",
+            "landmarks": landmarks_data,
             "angles": analysis_result.get("angles", {}),
             "mistakes": analysis_result.get("mistakes", []),
             "severity": analysis_result.get("severity", "good"),
@@ -296,22 +273,14 @@ async def analyze_posture(request: AnalyzeRequest):
 
 @app.post("/api/gemini-feedback")
 async def get_gemini_feedback(request: GeminiFeedbackRequest):
-    """
-    Get detailed AI coaching feedback from Gemini
-
-    This is an on-demand endpoint to save API costs
-    """
+    """Get detailed AI coaching feedback from Gemini"""
     try:
-        # Decode image
         frame = base64_to_image(request.image)
 
-        # Prepare context for Gemini
         context_text = f"Exercise: {request.exercise}\n"
         context_text += f"Angles: {request.angles}\n"
         context_text += f"Issues: {[m['issue'] for m in request.mistakes]}\n"
 
-        # Get Gemini feedback (using existing gemini_call module)
-        # Note: This is synchronous - in production, consider async queue
         feedback = call_gemini(
             image_data=frame,
             prompt=GEMINI_PROMPT,
@@ -329,39 +298,29 @@ async def get_gemini_feedback(request: GeminiFeedbackRequest):
 
 @app.post("/api/analyze-stream")
 async def analyze_stream(file: UploadFile = File(...)):
-    """
-    Alternative endpoint for uploading files directly
-    Useful for testing and future video upload feature
-    """
+    """Alternative endpoint for uploading files directly"""
     try:
-        # Read uploaded file
         contents = await file.read()
-
-        # Convert to OpenCV image
         nparr = np.frombuffer(contents, np.uint8)
         frame = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
 
         if frame is None:
             raise HTTPException(status_code=400, detail="Invalid image file")
 
-        # Detect pose landmarks
         landmarks = pose_detector.detect(frame)
 
         if landmarks is None:
             return {"error": "No pose detected", "detected": False}
 
-        # Recognize exercise
         exercise_name, confidence, phase = exercise_recognizer.recognize(
             landmarks,
             frame.shape
         )
 
-        # Analyze posture
         analysis_result = {"angles": {}, "mistakes": [], "severity": "good"}
         if exercise_name in EXERCISE_ANALYZERS:
             analysis_result = EXERCISE_ANALYZERS[exercise_name](landmarks)
 
-        # Analyze fatigue
         fatigue_scores = fatigue_analyzer.analyze(landmarks)
 
         return {

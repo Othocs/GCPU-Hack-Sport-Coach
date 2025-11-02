@@ -7,7 +7,6 @@ import time
 
 load_dotenv()
 
-# Get API key from environment
 _api_key = os.getenv("GEMINI_API_KEY")
 _client = genai.Client(api_key=_api_key) if _api_key else None
 _MODEL = "gemini-2.5-flash-lite"
@@ -30,10 +29,7 @@ def _call_with_path(image_path: str, prompt: str, context: str = None):
     return getattr(resp, "text", None)
 
 def call_gemini(image_data=None, prompt: str = "", context: str = None, retries: int = 2, backoff: float = 0.8, jpeg_buf=None):
-    """
-    Optionally include 'context' and pre-encoded JPEG bytes (jpeg_buf).
-    If jpeg_buf is provided, it bypasses on-the-fly encoding.
-    """
+    """Call Gemini API with image and prompt"""
     if _client is None:
         raise ValueError("Gemini API client not initialized. Please set GEMINI_API_KEY environment variable.")
 
