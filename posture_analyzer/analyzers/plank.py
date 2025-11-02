@@ -1,8 +1,8 @@
-from typing import Dict, any
+from typing import Dict, Any
 from ..landmarks import PoseLandmark, get_landmark_3d, _landmarks_to_np, _is_valid
 from ..angles import calculate_angle
 
-def analyze_plank(landmarks) -> Dict[str, any]:
+def analyze_plank(landmarks) -> Dict[str, Any]:
     L = _landmarks_to_np(landmarks)
 
     left_shoulder = get_landmark_3d(L, PoseLandmark.LEFT_SHOULDER)

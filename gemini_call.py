@@ -7,7 +7,9 @@ import time
 
 load_dotenv()
 
-_client = genai.Client()
+# Get API key from environment
+_api_key = os.getenv("GEMINI_API_KEY")
+_client = genai.Client(api_key=_api_key) if _api_key else None
 _MODEL = "gemini-2.5-flash-lite"
 
 def _encode_jpeg(image_bgr, max_side=512, quality=80):
@@ -32,6 +34,9 @@ def call_gemini(image_data=None, prompt: str = "", context: str = None, retries:
     Optionally include 'context' and pre-encoded JPEG bytes (jpeg_buf).
     If jpeg_buf is provided, it bypasses on-the-fly encoding.
     """
+    if _client is None:
+        raise ValueError("Gemini API client not initialized. Please set GEMINI_API_KEY environment variable.")
+
     def once():
         if jpeg_buf is not None:
             with tempfile.NamedTemporaryFile(delete=False, suffix='.jpg') as tmp_file:

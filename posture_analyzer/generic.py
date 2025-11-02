@@ -1,4 +1,4 @@
-from typing import Dict, Optional, any
+from typing import Dict, Optional, Any
 from .landmarks import PoseLandmark, _landmarks_to_np
 from .angles import _angle_at
 from .analyzers.squat import analyze_squat
@@ -27,7 +27,7 @@ def get_all_angles(landmarks) -> Dict[str, float]:
     maybe('body_alignment_right', _angle_at(L, PoseLandmark.RIGHT_SHOULDER, PoseLandmark.RIGHT_HIP, PoseLandmark.RIGHT_ANKLE), angles)
     return angles
 
-def analyze_generic_exercise(landmarks, exercise_type: str = None) -> Dict[str, any]:
+def analyze_generic_exercise(landmarks, exercise_type: str = None) -> Dict[str, Any]:
     exercise_type = exercise_type.lower() if exercise_type else 'generic'
     if exercise_type == 'squat':
         return analyze_squat(landmarks)
